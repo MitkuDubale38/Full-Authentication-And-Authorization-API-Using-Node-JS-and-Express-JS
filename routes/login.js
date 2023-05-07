@@ -19,11 +19,19 @@ loginRouter.post("/", async (req, res) => {
         { user_id: user._id, email },
         process.env.TOKEN_KEY,
         {
-          expiresIn: "2h",
+          expiresIn: process.env.ACCESS_TOKEN_EXPIRE_TIME,
+        }
+      );
+      const refreshToken = jwt.sign(
+        { user_id: user._id, email },
+        process.env.REFRESH_TOKEN_KEY,
+        {
+          expiresIn: process.env.REFRESH_TOKEN_EXPIRE_TIME,
         }
       );
 
       user.token = token;
+      user.refreshToken = refreshToken;
       res.status(200).json(user);
     }
     res.status(400).send("Invalid Credentials");

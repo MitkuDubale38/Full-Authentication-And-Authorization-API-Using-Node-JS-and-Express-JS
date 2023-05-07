@@ -33,11 +33,20 @@ registrationRouter.post("/", async (req, res) => {
       { user_id: user._id, email },
       process.env.TOKEN_KEY,
       {
-        expiresIn: "2h",
+        expiresIn: process.env.ACCESS_TOKEN_EXPIRE_TIME,
+      }
+    );
+
+    const refreshToken = jwt.sign(
+      { user_id: user._id, email },
+      process.env.REFRESH_TOKEN_KEY,
+      {
+        expiresIn: process.env.REFRESH_TOKEN_EXPIRE_TIME,
       }
     );
 
     user.token = token;
+    user.refreshToken = refreshToken;
 
     res.status(201).json(user);
   } catch (err) {

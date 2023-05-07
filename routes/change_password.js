@@ -24,7 +24,7 @@ changePasswordRouter.patch("/:user_id", auth, async (req, res) => {
           { user_id: user._id, email: user.email },
           process.env.TOKEN_KEY,
           {
-            expiresIn: "2h",
+            expiresIn: process.env.ACCESS_TOKEN_EXPIRE_TIME,
           }
         );
 

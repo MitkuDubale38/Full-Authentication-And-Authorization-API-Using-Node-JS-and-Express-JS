@@ -25,7 +25,7 @@ forgotPasswordRouter.post("/", async (req, res) => {
         { user_id: User._id, email: User.email },
         process.env.RESET_PASSWORD_KEY,
         {
-          expiresIn: "20m",
+          expiresIn: process.env.RESET_PASSWORD_EXPIRE_TIME,
         }
       );
 
