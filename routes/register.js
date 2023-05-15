@@ -4,7 +4,28 @@ require("dotenv").config();
 const User = require("../models/users");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+// /**
+//  * @swagger
+//  * /register:
+//  *   post:
+//  *     tags: [Sign Up]
+//  *     requestBody:
+//  *       required: true
+//  *       content:
+//  *         application/json:
+//  *           schema:
+//  *             $ref: '#/models/schemas/Book'
+//  *     responses:
+//  *       201:
+//  *         description: Registered Successfully.
+//  *         content:
+//  *           application/json:
+//  *             schema:
+//  *               $ref: '#/components/schemas/Book'
+//  *       500:
+//  *         description: Server error occured
+//  *
+//  **/
 //register
 registrationRouter.post("/", async (req, res) => {
   try {
