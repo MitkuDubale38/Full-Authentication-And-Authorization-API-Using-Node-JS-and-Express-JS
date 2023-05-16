@@ -8,7 +8,7 @@ const User = require("../models/users");
  * @swagger
  * components:
  *   schemas:
- *     User:
+ *     Login:
  *       type: object
  *       required:
  *         - email
@@ -31,14 +31,14 @@ const User = require("../models/users");
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/User'
+ *             $ref: '#/components/schemas/Login'
  *     responses:
  *       200:
  *         description: Login Successfull.
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/User'
+ *               $ref: '#/components/schemas/Login'
  *       500:
  *         description: Server error occured
  *

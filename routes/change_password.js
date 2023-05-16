@@ -6,6 +6,52 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/users");
 
 const auth = require("../middleware/auth");
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     ChangePassword:
+ *       type: object
+ *       required:
+ *         - user_id
+ *         - password
+ *       properties:
+ *         user_id:
+ *           type: string
+ *           description: user id of the user
+ *         password:
+ *           type: String
+ *           description: password of the user
+ */
+/**
+ * @swagger
+ * /Change Password/{user_id}:
+ *   patch:
+ *     tags: [change_password]
+ *     parameters:
+ *        - in: path
+ *        name: user_id
+ *        type: string
+ *        required: true
+ *        description:  ID of the user to get.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ChangePassword'
+ *     responses:
+ *       200:
+ *         description: Password Changed Successfully.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ChangePassword'
+ *       500:
+ *         description: Server error occured
+ *
+ */
 changePasswordRouter.patch("/:user_id", auth, async (req, res) => {
   const user = await User.findOne({ _id: req.params.user_id });
   if (user) {
