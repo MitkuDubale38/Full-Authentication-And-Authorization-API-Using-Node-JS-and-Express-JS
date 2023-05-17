@@ -4,45 +4,7 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users");
-/**
- * @swagger
- * components:
- *   schemas:
- *     Login:
- *       type: object
- *       required:
- *         - email
- *         - password
- *       properties:
- *         email:
- *           type: string
- *           description: email of the user
- *         password:
- *           type: String
- *           description: password of the user
- */
-/**
- * @swagger
- * /login:
- *   post:
- *     tags: [login]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Login'
- *     responses:
- *       200:
- *         description: Login Successfull.
- *         content:
- *           application/json:
- *             schema:
- *               $ref: '#/components/schemas/Login'
- *       500:
- *         description: Server error occured
- *
- */
+
 // Login
 loginRouter.post("/", async (req, res) => {
   try {
