@@ -5,7 +5,7 @@ const doc = {
     description: "Authentication And Autorization API Using NodeJs and Express",
   },
   host: "3nrfsw-8080.csb.app",
-  schemes: ["http"],
+  schemes: ["https"],
 };
 const outputFile = "./docs/swagger_output.json";
 const endpointsFiles = ["./app.js"];
