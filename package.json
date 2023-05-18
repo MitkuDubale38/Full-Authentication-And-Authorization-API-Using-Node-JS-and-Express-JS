@@ -8,6 +8,9 @@
     "build": "echo This is a static template, there is no bundler or bundling involved!",
     "swagger-autogen": "node swagger.js"
   },
+  "engines": {
+    "node": ">=14.20.1" 
+  }
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codesandbox-app/static-template.git"
