@@ -126,11 +126,6 @@
             "type": "string"
           },
           {
-            "name": "token",
-            "in": "query",
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "schema": {
@@ -139,9 +134,7 @@
                 "password": {
                   "example": "any"
                 },
-                "token": {
-                  "example": "any"
-                }
+
               }
             }
           }
