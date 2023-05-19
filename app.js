@@ -8,7 +8,7 @@ var cors = require("cors");
 
 app.use(cors());
 app.use(express.json());
-
+app.options('*', cors());
 //registering routes
 app.use("/api/register", require("./routes/register"));
 app.use("/api/login", require("./routes/login"));
