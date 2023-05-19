@@ -7,8 +7,9 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 
 let transporter = nodemailer.createTransport({
+  service: 'gmail',
   host: "smtp.gmail.com",
-  port: 587,
+  port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
     user: "mitedubale3864@gmail.com", // generated ethereal user
