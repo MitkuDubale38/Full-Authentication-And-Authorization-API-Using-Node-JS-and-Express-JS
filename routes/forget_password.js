@@ -12,7 +12,7 @@ let transporter = nodemailer.createTransport({
   secure: true, // true for 465, false for other ports
   auth: {
     user: "mitedubale3864@gmail.com", // generated ethereal user
-    pass:  process.env.EMAIL_PASSWORD, // generated ethereal password
+    pass:  "towcrxocefpbrxwk" // generated ethereal password
   },
 });
 forgotPasswordRouter.post("/", async (req, res) => {
