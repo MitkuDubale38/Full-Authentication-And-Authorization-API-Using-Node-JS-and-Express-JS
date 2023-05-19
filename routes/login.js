@@ -10,7 +10,7 @@ loginRouter.post("/", async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!(email && password)) {
-      res.status(400).send("All input is required");
+      res.status(400).json("All input is required");
     }
     const user = await User.findOne({ email });
 
@@ -34,7 +34,7 @@ loginRouter.post("/", async (req, res) => {
       user.refreshToken = refreshToken;
       res.status(200).json(user);
     } else {
-      res.status(400).send("Invalid Credentials");
+      res.status(400).json("Invalid Credentials");
     }
   } catch (err) {
     console.log(err);
