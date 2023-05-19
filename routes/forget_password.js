@@ -10,9 +10,9 @@ let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
   secure: false, // true for 465, false for other ports
-  auth: {
-    user: "mitkudubale3864@gmail.com", // generated ethereal user
-    pass: "rkipfuzdigysfgny", // generated ethereal password
+  auth: {EMAIL_PASSWORD
+    user: "mitedubale3864@gmail.com", // generated ethereal user
+    pass:  process.env.EMAIL_PASSWORD, // generated ethereal password
   },
 });
 forgotPasswordRouter.post("/", async (req, res) => {
