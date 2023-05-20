@@ -34,7 +34,7 @@ loginRouter.post("/", async (req, res) => {
       user.refreshToken = refreshToken;
       res.status(200).json(user);
     } else {
-      res.status(400).json("Invalid Credentials");
+      res.status(400).json({ message: "Invalid Credentials" });
     }
   } catch (err) {
     console.log(err);
