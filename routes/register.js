@@ -11,7 +11,7 @@ registrationRouter.post("/", async (req, res) => {
     const { first_name, last_name, email, password } = req.body;
 
     if (!(email && password && first_name && last_name)) {
-      res.status(400).json({ message: "All input is required" });
+      res.status(400).json({ message: "All inputs are required" });
     }
 
     const oldUser = await User.findOne({ email });
