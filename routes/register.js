@@ -11,13 +11,15 @@ registrationRouter.post("/", async (req, res) => {
     const { first_name, last_name, email, password } = req.body;
 
     if (!(email && password && first_name && last_name)) {
-      res.status(400).json({ message: "All input is required"});
+      res.status(400).json({ message: "All input is required" });
     }
 
     const oldUser = await User.findOne({ email });
 
     if (oldUser) {
-      return res.status(409).json({ message: "User Already Exist. Please Login"});
+      return res
+        .status(400)
+        .json({ message: "User Already Exist. Please Login" });
     }
 
     encryptedPassword = await bcrypt.hash(password, 10);
