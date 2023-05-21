@@ -5,11 +5,9 @@
     "description": "Authentication And Autorization API Using NodeJs and Express",
     "version": "1.0.0"
   },
-  "host": "3nrfsw-8080.csb.app",
+  "host": "authentication-api-express-js-and-node-js.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/api/register/": {
       "post": {
@@ -231,9 +229,7 @@
             "in": "body",
             "schema": {
               "type": "object",
-              "properties": {
-               
-              }
+              "properties": {}
             }
           }
         ],
